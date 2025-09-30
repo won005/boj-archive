@@ -28,12 +28,13 @@ int main()
 
     for (char c : str)
     {
-        count ++;
+        
         int index = c - 'a'; //char을 어떻게 연산해요!
         if (result[index] == -1) //-1로 비어있는지 확인
         {
             result[index] = count;
         }
+        count ++;
     }
 
     // 3. 출력
