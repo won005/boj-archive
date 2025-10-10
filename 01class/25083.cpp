@@ -1,17 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int main() {
-    // Raw String Literal 사용 
-    cout << R"( ,r'"7
-            r`-_ ,' ,/
-            \. ". L_r'
-            `~\/
-            |
-            |)" << '\n';
-    
-    return 0;
-}
+//새싹 구현 문제 
 
 //? 알아가야할 부분
 //  <출력하려는거>  <코드로 작성>
