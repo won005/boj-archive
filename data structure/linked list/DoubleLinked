@@ -110,7 +110,7 @@ void DLinkedList::remove(DNode* v){
 
 
 void DLinkedList::addFront(int e){
-    add(header->next, e);
+    add(header->prev, e);
 }
 
 void DLinkedList::addBack(int e){
