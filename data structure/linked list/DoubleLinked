@@ -1,0 +1,124 @@
+#include <iostream>
+using namespace std;
+
+class DLinkedList;//? 이거는 왜 선언하는거지?
+
+
+class DNode{
+    private:
+    int data;
+    DNode* prev;
+    DNode* next;
+
+    public: //? 이걸 굳이 작성해야할 필요?
+    friend DLinkedList;
+};
+
+//* 리스트
+class DLinkedList{
+    private:
+    DNode* header; //! 특이한점 : header,trailer은 비어있다. ....왜?
+    DNode* trailer;
+    int count; //노드 개수
+
+
+    //? 왜 추가 삭제가 private에 있는거지 추가와 addFront,Back이 대체 뭐가 다른거지?
+    void add(DNode* v, int e); //추가 
+    void remove(DNode* v); //삭제
+
+    public:
+    DLinkedList();
+    ~DLinkedList();
+
+
+    
+    int size() const; 
+    bool empty() const; 
+    int front() const;
+    int back() const;
+
+    void addFront(int e);
+    void removeFront();
+    void addBack(int e);
+    void removeBack();
+};
+//*----------------------------
+
+DLinkedList::DLinkedList(){
+    header = new DNode();
+    trailer = new DNode();
+    header->next =  trailer;
+    header->next = trailer;
+    trailer->prev = header;
+    count =0;
+}
+
+DLinkedList::~DLinkedList(){
+    while(!empty()) removeFront(); //? empty()가 대체 무어에 대한 empty인지 모르겠다.
+    delete header;
+    delete trailer;
+}
+
+int DLinkedList::size()const{
+    return count;
+}
+
+bool DLinkedList::empty() const{
+    if(header-> next == trailer) return true; 
+    else return false;
+}
+
+int DLinkedList::front() const{
+    return header-> next -> data;
+}
+
+
+int DLinkedList::back() const{
+    return trailer-> prev -> data;
+}
+
+
+void DLinkedList:: add(DNode* v, int e){ 
+    DNode* n = new DNode; //새로운 노드
+//? new DNode; new DNode();는 무슨차이인가?
+
+    n -> data = e; 
+    n-> next = v;
+    n -> prev = v-> prev;
+
+
+    //? 이거 이해 안감
+    v-> prev -> next = n;
+    v-> prev = n;
+
+
+    count ++;
+}
+
+
+
+void DLinkedList::remove(DNode* v){
+    DNode* u = v->prev;
+    DNode* w = v-> next;
+    u-> next = w;
+    w->prev = u;
+
+    delete v;
+    count --;
+}
+
+
+
+void DLinkedList::addFront(int e){
+    add(header->next, e);
+}
+
+void DLinkedList::addBack(int e){
+    add(trailer,e);
+}
+
+
+
+void DLinkedList::removeFront(){
+    remove(trailer->prev);
+}
