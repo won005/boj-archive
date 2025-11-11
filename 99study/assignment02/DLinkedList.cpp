@@ -34,14 +34,19 @@ int DLinkedList::back() const {
 
 
 //한번 add라는 함수로 접근하는데 두번 거치게됨
-void DLinkedList::add(DNode* v, int e){
-    DNode* u = new DNode;
-    u->data = e;
-    u-> next = v;
-    u-> prev = v-> prev;
+void DLinkedList::add(DNode* v, int e){ //v노드는 우리가 e데이터를 넣은 노드의 뒤에 위치하게됨
+    DNode* u = new DNode; //힙에 저장하도록함(함수가 끝나도 사라지지 않도록)
+    u->data = e; //데이터 넣기
 
-    v->prev-> next = u;
-    v->prev = u;
+
+    // u <-> v로 들어감
+    // u의 연결
+    u-> next = v; //u노드의 연결
+    u-> prev = v-> prev; //v의 앞이 u의 앞이 되어야한다.
+
+    //u 바깥의 연결
+    v->prev-> next = u; //v 앞에 있던 노드의 연결을 u쪽으로 향하게
+    v->prev = u; // v 노드의 앞 = u 향하게
     count ++;
 }
 
