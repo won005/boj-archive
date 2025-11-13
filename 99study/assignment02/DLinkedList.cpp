@@ -50,12 +50,14 @@ void DLinkedList::add(DNode* v, int e){ //v노드는 우리가 e데이터를 넣
     count ++;
 }
 
+
+// header, trailer 는 공백
 void DLinkedList:: addFront(int e){
     add(header-> next, e); //맨앞에서 두번째 노드
 }
 
 void DLinkedList:: addBack(int e){
-    add(trailer,e); //왜 trailer->prev가 아닌거지.. 헷갈린다.
+    add(trailer,e); 
 }
 
 void DLinkedList::remove(DNode* v){

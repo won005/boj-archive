@@ -5,14 +5,13 @@
 
 class DEQue {
 private:
-    DLinkedList list;  // Adapter Pattern: DLinkedList를 내부적으로 사용
+    DLinkedList list;  // Adapter Pattern으로서 DLL을 내부적으로 사용하도록 한다.
     
 public:
-    // 생성자
-    DEQue();
-    //?왜 소멸자는 필요가 없을 지 생각해보자
-
+    //생성자 소멸자 x 
+    //DLL에서 다 해줌
     
+
     // get
     int size() const;
     bool empty() const;
