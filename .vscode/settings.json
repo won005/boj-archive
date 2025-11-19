@@ -57,6 +57,7 @@
         "xtr1common": "cpp",
         "xtree": "cpp",
         "set": "cpp",
-        "doublelinked": "cpp"
+        "doublelinked": "cpp",
+        "xhash": "cpp"
     }
 }
