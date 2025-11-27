@@ -1,5 +1,5 @@
-#ifndef LIST_T
-#define LIST_T
+#ifndef LIST_H
+#define LIST_H
 
 
 class List;

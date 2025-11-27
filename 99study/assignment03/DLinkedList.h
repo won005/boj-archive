@@ -1,31 +1,32 @@
 #ifndef DLINKEDLIST_T
 #define DLINKEDLIST_T
 
-class DLinkedLits; //클래스 선언하기
+class DLinkedLits; // 클래스 선언하기
 
-//데이터 노드
-class DNode{
-    private:
+// 데이터 노드
+class DNode
+{
+private:
     int data;
-    DNode* prev;
-    DNode* next;
+    DNode *prev;
+    DNode *next;
 
-    public:
-    friend class DLinkedList; //
-
+public:
+    friend class DLinkedList; 
 };
 
-//전체 노드 리스트
-class DLinkedList{
-    private:
-    DNode* header;
-    DNode* trailer;
+// 전체 노드 리스트
+class DLinkedList
+{
+private:
+    DNode *header;
+    DNode *trailer;
     int count;
 
-    void add(DNode* v, int e);
-    void remove(DNode* v);
+    void add(DNode *v, int e);
+    void remove(DNode *v);
 
-    public:
+public:
     DLinkedList();
     ~DLinkedList();
 
