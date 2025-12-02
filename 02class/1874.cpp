@@ -3,44 +3,46 @@
 #include <vector>
 using namespace std;
 
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
 
-//! 보류 !
-int main(){
-    //8개수를 나열 입력
-    int a;
-    cin >> a;
-    int target=0;
-    stack<int> s;
+    int n;
+    cin >> n;
 
-    for(int k =0; k < a;k++){
-        s.push(k+1); //[1,2,3,4..]
-    }
+    stack<int> st;
+    vector<char> result;
+    int current = 1; // 숫자를 1부터 시작
 
-    for (int i =0; i<a;i++){
-        int b;
-        cin >>b; 
+    for (int i = 0; i< n ; i++){
+        int target;
+        cin >> target;
 
-        if(b == s.top()){
-            for(int j = 0; j<s.size(); j++){
-                cout<<"-"<<'\n';
-            }
-        }else if(s.top() > b){
-            while(s.top()==b){
-                cout<<"-"<<'\n';
-                s.pop();
-            }
-        }else if(s.top() <b){
-            while(s.top()==b){
-                cout<<"+"<<'\n';
-            }
+        while(current <= target){ //현재 위치의 숫자가 내가 찾고자하는 숫자가 될 때까지..
+            st.push(current);
+            result.push_back('+');
+            current++;
         }
 
+        if(!st.empty() && st.top() == target) //스택 top이 target과 같다면, 즉 target이 맨 끝의 숫자라면
+        {
+            st.pop();
+            result.push_back('-');
+        }else{
+            cout<<"NO\n";
+            return 0;
+        }
 
     }
+
+    // 결과 출력
+    for(char c : result) {
+        cout << c << '\n';
+    }
     
+    return 0;
 
-
-    //
-    //불가능한 때?
 }
+
+//! 추후 복습 필요
 
