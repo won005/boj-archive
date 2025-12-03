@@ -11,6 +11,7 @@ class DNode{
     DNode* next;
 
     friend class List; //리스트의 접근을 필요
+    friend class Sequence;
     friend DNode* linearSearch(const List& list, int key);
 
     public: //생성자 리스트
@@ -19,7 +20,7 @@ class DNode{
 
 // List
 class List{
-    private:
+    protected:
     DNode* header;
     DNode* trailer;
     int count;
@@ -42,6 +43,6 @@ class List{
     // 데이터 값이 아닌 node의 포지션을 내놓기 위해서 DNode* 
 };
 
-DNode* linearSearchS(const List& list, int key);
+DNode* linearSearch(const List& list, int key);
 
 #endif
