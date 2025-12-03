@@ -14,6 +14,7 @@ class DNode{
     friend class Sequence;
     friend DNode* linearSearch(const List& list, int key);
 
+
     public: //생성자 리스트
     DNode() : data(0),prev(nullptr),next(nullptr){}
 };
@@ -44,5 +45,7 @@ class List{
 };
 
 DNode* linearSearch(const List& list, int key);
+void bubbleSort(Sequence& ns);  // 추가 : 5번
+
 
 #endif
