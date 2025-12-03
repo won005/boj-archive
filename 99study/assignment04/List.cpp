@@ -53,8 +53,8 @@ void List::insertBack(int e){
     newNode -> next = trailer;
     newNode -> prev = trailer -> prev;
 
-    trailer -> prev = newNode;
-    trailer -> prev -> next = newNode;
+    trailer -> prev -> next = newNode;  // 먼저! (원래 마지막 노드의 next 연결)
+    trailer -> prev = newNode;          // 나중에! (trailer의 prev 업데이트)
     count ++;
 }
 
