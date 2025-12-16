@@ -2,6 +2,10 @@
 #define TREE_T
 #include <list>
 
+//Proper Binary Tree -> 자식이 0,2중 하나인 tree
+//Complete Binary Tree -> 완전이진트리 : 마지막 레벨 제외 모두 채워지는 성질
+//proper > complete 
+
 class Node
 {
 private:
@@ -16,19 +20,24 @@ private:
 public: //! 생성자랑 이 노드를 이용할 자료구조 adt를 friend로 추가하는 것
     Node(int d, Node *p = nullptr) : data(d), parent(p), left(nullptr), right(nullptr) {};
     friend class Tree;
-    // ~Node 소멸자는 없나?
+    //! ~Node 소멸자는 없나?
+    //* new를 직접 호출할 때만 필요하다.
 
     ////get set
     //! 다른 자료구조에서 getset은 왜 안썻더라..?
+    //* 이미 friend 클래스로 접근을 허가한 바가 있어서 Tree->Node 통해서 접근이 가능함
+    //friend를 사용하면 의존성이 증가하기는 하는데, Node랑 자료구조는 어차피 연관이 깊을 수 밖에 없어서 그냥 놔둠. 편의성 챙긴거
     // int getData() const {return data;}
     // void setData(int d);
 };
+
 
 class Tree
 {
 private:
     Node *root; // 루트
     int n;      // 노드 개수
+    Node *last; // 맨 마지막 노드
 
 public:
     Tree() : root(nullptr), n(0) {}; // Tree 초기화
@@ -48,11 +57,11 @@ public:
     bool empty()const;
 
     // O(1) 노드 수정 
-    Node* expandExternal(Node *v);// 아마 추가하는 거겠지.. 
+    Node* expandExternal(Node *v, int rightData, int leftData);// 아마 추가하는 거겠지..
+    void insert(int d); 
     void removeAboveExternal(Node *v);// 삭제
 
-    Node *root() const; // 멘 위 루트 get
-    //Node *positions(Node *node) const;
+    Node *getRoot() const; // 멘 위 루트 get
 
     //O(n)
     std::list<Node *> positions() const; // 모든 노드 순회 해서 리스트로 반환하기
