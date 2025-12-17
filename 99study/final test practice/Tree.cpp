@@ -71,7 +71,7 @@ Node* Tree::expandExternal(Node *v, int leftData, int rightData){ // int 여야�
     // 오른쪽 자식 생성
     Node* rightChild = new Node(rightData,v);
 
-    //포인터 설정
+    //포인터 설정 
     v -> left = leftChild;
     v -> right = rightChild;
 

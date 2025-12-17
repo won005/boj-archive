@@ -1,6 +1,8 @@
 #ifndef TREE_T
 #define TREE_T
 #include <list>
+//Proper Binary Tree - L.L 기반
+
 
 //Proper Binary Tree -> 자식이 0,2중 하나인 tree
 //Complete Binary Tree -> 완전이진트리 : 마지막 레벨 제외 모두 채워지는 성질
