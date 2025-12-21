@@ -2,10 +2,10 @@
 using namespace std;
 
 int main(){
-    int n,m;
+    long n,m;
     cin >> n>>m;
 
-    int temp = n-m;
+    long temp = n-m;
     if(temp <0){
         temp = -temp;
     }
