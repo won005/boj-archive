@@ -18,10 +18,14 @@ int main(){
     }
     float sum=0;
     for(int i = 0; i <a; i++){
-        sum +=(arr[i]/max)*100;
+        sum +=((double)arr[i]/max)*100;
     }
-    cout << (float) (sum /a);
+    cout << sum /a;
     // 새로운 수들로 평균 구하기
 }
 
-//? int 랑 연산하면서
+//? float 이 하나라도 있다면 float으로 값이 나온다. (double 동일)
+//  그래서 마지막 결괏값을 cout 하는 순간이 아니라
+//  sum 을 산출 할 때 캐스팅하는 순간이 중요
+
+//? float 은 f 붙임. cpp 에서 실수는 기본적으로 double
