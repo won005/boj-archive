@@ -4,7 +4,7 @@ using namespace std;
 
 int main() {
     ios_base::sync_with_stdio(false);
-    cin.tie(NULL);//
+    cin.tie(NULL);
 
     long long N;
     cin >> N;
@@ -28,3 +28,5 @@ int main() {
 
     return 0;
 }
+
+//? 규칙을 찾는 것도 좋은데 공식을 정확하게 세워야지 작성이 수월함
