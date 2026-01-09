@@ -9,21 +9,18 @@ int main(){
     cin >> a >> b;
 
     int count = 0;
-    int temp = 0;
+    int result = 0; //처음부터 0으로 시작
 
-    if(a%b !=0){
-        cout<<0;
-    }else{
-        for(int i = 1;i < a+1;i++){
-        temp = a%i;
-        if(temp == 0){
-            count ++;
-        }
-        if(count == b){
-            cout << i ;
-            break;
+    for(int i = 1; i<=a; i++){
+        if(a%i == 0){
+            count++;
+            if(count == b){
+                result = i;
+                break;
+            }
         }
     }
-    }
+    cout << result;
+    return 0;
     
 }
