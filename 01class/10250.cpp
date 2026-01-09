@@ -13,8 +13,8 @@ int main(){
         int count = 0;
         //호텔 층, 방, 몇번째 손님
 
-        int floor = n /h;
-        int room = n % h +1;
+        int floor = n % h;
+        int room = n / h +1;
 
         if(floor == 0){
             floor = h;
