@@ -2,6 +2,7 @@
 #include <queue>
 using namespace std; 
 
+// 문자열 반복
 int main(){
     int a;
     cin >> a;
@@ -48,4 +49,5 @@ for (int i =0; i< a; i++){
     }
     cout<< '\n'; //텍스트가 끝나면 다음줄로 이동
 }
-*/
+    기본형으로 생각해냄 ㅎㅎ
+*/ 
