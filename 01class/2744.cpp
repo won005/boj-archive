@@ -1,7 +1,8 @@
 #include <iostream>
 #include <string>
 using namespace std;
-//
+//캐스팅
+
 int main(){
     string str;
     cin >>str;
@@ -14,11 +15,12 @@ int main(){
         }
     }
 }
+//! char()로 감싸면 형변환이 가능하다
 
 //? 아스키코드 대소문자 값 차이
 // 'a' = 97, 'A' = 65
 // 'z' = 122, 'Z' = 90
-//  32 씩 차이난다.
+//* 대소문자는 서로  32 씩 차이난다.
 
 //? 패배 요인
 //  char(..)로 형변환을 하면 되는데 
@@ -45,18 +47,4 @@ float f = 3.14;
 int i = f;     // float → int (자동, 3) ⚠️ 데이터 손실!
 
 
-
-*명시
-// 1️⃣ 암시적 형변환 (자동)
-int a = 10;
-double b = a;  // 형변환 O, 캐스팅 X
-
-// 2️⃣ 명시적 형변환 (수동) = 캐스팅
-double c = 3.14;
-int d = (int)c;  // 형변환 O, 캐스팅 O
-
-// 3️⃣ 연산 중 자동 형변환
-int x = 5;
-double y = 2.5;
-double result = x + y;  // x가 double로 자동 변환
 */
